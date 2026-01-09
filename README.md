@@ -11,31 +11,40 @@ O **Aura Sound** é uma solução Full Stack que utiliza Processamento Digital d
 Certifique-se de ter o Python 3.8+ instalado.
 
 1. **Instale as dependências:**
+
 ```bash
 pip install fastapi uvicorn librosa numpy scikit-learn joblib python-multipart
 
 ```
 
-
 2. **Treine o modelo:**
 Organize suas músicas em `dataset/[genero]/musica.mp3` e execute:
+
 ```bash
 python ai/train.py
 
 ```
 
-
 3. **Inicie a API:**
+
 ```bash
 uvicorn main:app --reload
 
 ```
 
-
-
 ## 2. Frontend (Web)
 
-Basta abrir o arquivo `index.html` em seu navegador ou usar o *Live Server* do VS Code.
+Para evitar problemas de permissão de arquivos e requisições (CORS), execute o frontend utilizando um servidor HTTP:
+
+1. No front end do projeto (onde está o `index.html`), execute:
+
+```bash
+python3 -m http.server 5501
+
+```
+
+2. Acesse no seu navegador:
+`http://localhost:5501`
 
 ---
 
@@ -52,13 +61,13 @@ Basta abrir o arquivo `index.html` em seu navegador ou usar o *Live Server* do V
 
 ```text
 ├── ai/
-│   ├── features.py   # Extração de dados matemáticos do áudio
-│   ├── train.py      # Script de treinamento do Random Forest
-│   └── model.joblib  # Modelo binário salvo
-├── main.py           # API principal e rotas (Analyze/Organize)
-├── index.html        # UI com sistema de Dropzone
-├── style.css         # Design futurista e responsivo
-└── script.js         # Integração com a API e player de áudio
+│   ├── features.py   # Extração de dados matemáticos do áudio
+│   ├── train.py      # Script de treinamento do Random Forest
+│   └── model.joblib  # Modelo binário salvo
+├── main.py           # API principal e rotas (Analyze/Organize)
+├── index.html        # UI com sistema de Dropzone
+├── style.css         # Design futurista e responsivo
+└── script.js         # Integração com a API e player de áudio
 
 ```
 
