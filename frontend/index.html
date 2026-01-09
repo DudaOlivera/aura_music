@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Aura Music | AI Analysis</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/461/461238.png">
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="background-glow"></div>
+
+<header>
+    <h1>Aura<span>Music</span></h1>
+    <p>Identifique o gênero com IA</p>
+</header>
+
+<main class="container">
+    <div class="glass-card">
+        <input type="file" id="audioInput" multiple accept="audio/mpeg, audio/mp3" hidden />
+        
+        <label for="audioInput" class="drop-zone" id="dropZone">
+            <div class="glow-icon">✦</div>
+            <div class="upload-text">
+                <strong>Importar Músicas</strong>
+                <span>Selecione arquivos para análise neural</span>
+                <em id="fileCount">Nenhum arquivo na fila</em>
+            </div>
+        </label>
+
+        <button id="startBtn" disabled>EXECUTAR ANÁLISE NEURAL</button>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Música</th>
+                        <th>Gênero / Status</th>
+                        <th style="text-align: center;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="musicTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>⚡ Powered by Aura Engine IA</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
